@@ -1,0 +1,929 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="EMIR Projects">
+<meta property="og:description" content="Закупки и комплектация проектов для гостиничных, жилых и коммерческих интерьеров. Дубай, ОАЭ.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="../img/hero.jpg">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="https://www.emirprojects.com/">
+<link rel="alternate" hreflang="ar" href="https://www.emirprojects.com/ar/">
+<link rel="alternate" hreflang="ru" href="https://www.emirprojects.com/ru/">
+<title>EMIR Projects</title>
+<meta name="description" content="EMIR Projects — партнёр по закупкам и комплектации проектов из Дубая для гостиничных, жилых и коммерческих интерьеров. Связываем страны Персидского залива с более чем 800 европейскими производителями.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --black:#120E0B;
+  --espresso:#1C1512;
+  --espresso-2:#261D18;
+  --ivory:#F4EEE5;
+  --ivory-2:#EAE2D6;
+  --gold:#C9A24A;
+  --gold-2:#E2C47A;
+  --gold-dim:#8C7133;
+  --ink:#1E1611;
+  --ink-muted:#6E6157;
+  --on-dark:#F1E9DD;
+  --on-dark-muted:#A79A8B;
+  --line-dark:rgba(241,233,221,.14);
+  --line-light:rgba(30,22,17,.14);
+  --display:"Cormorant Garamond","Cormorant","EB Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Manrope","Helvetica Neue",Arial,system-ui,sans-serif;
+  --gutter:clamp(18px,4.5vw,72px);
+  --max:1400px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--on-dark);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:300;line-height:1;margin:0;text-wrap:balance;letter-spacing:-.005em}
+h1 i,h2 i,h3 i{font-style:italic;font-weight:300;color:var(--gold)}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.sec{padding-block:clamp(90px,12vw,180px)}
+.light{background:var(--ivory);color:var(--ink);color-scheme:light}
+.light .eyebrow{color:var(--gold-dim)}
+.light .muted{color:var(--ink-muted)}
+.muted{color:var(--on-dark-muted)}
+.eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;color:var(--gold);display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.h-hero{font-size:clamp(52px,9.2vw,148px)}
+.h-xl{font-size:clamp(44px,6.4vw,104px)}
+.h-lg{font-size:clamp(36px,4.6vw,72px)}
+.h-md{font-size:clamp(28px,3vw,44px)}
+.lede{font-size:clamp(17px,1.35vw,20px);line-height:1.65;max-width:56ch}
+.btn{display:inline-flex;align-items:center;gap:14px;font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;text-decoration:none;padding:17px 30px;border:1px solid var(--gold);color:var(--gold);background:transparent;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;transition:color .5s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold);z-index:-1;transform:translateY(101%);transition:transform .55s var(--ease)}
+.btn:hover{color:var(--black)}
+.btn:hover::before{transform:none}
+.btn.fill{background:var(--gold);color:var(--black)}
+.btn.fill::before{background:var(--gold-2)}
+.btn .arr{display:inline-block;transition:transform .5s var(--ease)}
+.btn:hover .arr{transform:translateX(6px)}
+.light .btn{border-color:var(--ink);color:var(--ink)}
+.light .btn::before{background:var(--ink)}
+.light .btn:hover{color:var(--ivory)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,110px);align-items:start}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:100;background:var(--black);display:grid;place-items:center;transition:opacity .9s var(--ease),visibility .9s}
+.loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader img{width:clamp(200px,26vw,300px);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.5;transform:scale(.97)}50%{opacity:1;transform:scale(1)}}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;padding-top:env(safe-area-inset-top,0px);transition:background .5s,backdrop-filter .5s;mix-blend-mode:normal}
+.nav.solid{background:rgba(18,14,11,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line-dark)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:92px;transition:height .4s}
+.nav.solid .wrap{height:72px}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+.brand img{height:54px;width:auto;transition:height .4s}
+.nav.solid .brand img{height:44px}
+@media (max-width:600px){.brand img{height:44px}.nav.solid .brand img{height:38px}}
+.brand .wm{display:flex;flex-direction:column;line-height:1}
+.brand .wm b{font-family:var(--sans);font-weight:400;font-size:17px;letter-spacing:.42em}
+.brand .wm small{font-size:8px;letter-spacing:.6em;font-weight:500;color:var(--gold);margin-top:6px;margin-left:.1em}
+.nav-links{display:flex;gap:clamp(20px,2.6vw,44px);list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark);position:relative;padding-block:6px;opacity:.85;transition:opacity .3s}
+.nav-links a:hover{opacity:1}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav .btn{padding:12px 20px;font-size:11px}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:44px;height:44px;background:none;border:0;cursor:pointer;padding:10px}
+.burger span{display:block;height:1px;background:var(--on-dark);transition:transform .5s var(--ease),opacity .3s,width .4s}
+.burger span:nth-child(2){width:70%;margin-left:auto}
+.burger:hover span:nth-child(2){width:100%}
+body.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:55;background:var(--espresso);color:var(--on-dark);clip-path:inset(0 0 100% 0);transition:clip-path .9s var(--ease);display:grid;grid-template-columns:1.1fr .9fr;overflow:hidden}
+body.menu-open .menu{clip-path:inset(0 0 0 0)}
+.menu-left{padding:calc(130px + env(safe-area-inset-top,0px)) var(--gutter) 60px;display:flex;flex-direction:column;justify-content:space-between;overflow:auto}
+.menu-links{list-style:none;margin:0;padding:0;counter-reset:m}
+.menu-links li{border-bottom:1px solid var(--line-dark)}
+.menu-links a{display:flex;align-items:baseline;gap:22px;text-decoration:none;font-family:var(--display);font-size:clamp(38px,5.6vw,76px);line-height:1.25;padding-block:10px;transition:color .4s,padding-left .5s var(--ease)}
+.menu-links a::before{counter-increment:m;content:counter(m,decimal-leading-zero);font-family:var(--sans);font-size:11px;letter-spacing:.3em;color:var(--gold)}
+.menu-links a:hover{color:var(--gold-2);padding-left:14px}
+.menu-meta{display:flex;flex-wrap:wrap;gap:28px 60px;font-size:13.5px;color:var(--on-dark-muted);margin-top:48px}
+.menu-meta b{display:block;font-weight:500;color:var(--gold);font-size:10px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:8px}
+.menu-right{position:relative;overflow:hidden}
+.menu-right img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.6s var(--ease);filter:brightness(.75)}
+body.menu-open .menu-right img{transform:scale(1)}
+.menu-right .mono{position:absolute;left:50%;top:50%;width:min(38%,240px);transform:translate(-50%,-50%);opacity:.9}
+@media (max-width:900px){.menu{grid-template-columns:1fr}.menu-right{display:none}.nav-links,.nav .btn{display:none}}
+@media (min-width:901px){.burger{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100svh;min-height:640px;max-height:1100px;overflow:hidden;color:#F6EFE5;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate}
+.slides{position:absolute;inset:0;z-index:-2}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.1);transition:opacity 1.8s ease}
+.slides img.on{opacity:1;animation:kb 9s linear forwards}
+@keyframes kb{from{transform:scale(1.1)}to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,14,11,.55),rgba(18,14,11,.1) 35%,rgba(18,14,11,.2) 60%,rgba(18,14,11,.92) 100%)}
+.hero-mark{position:absolute;right:calc(var(--gutter) - 2vw);top:50%;transform:translateY(-58%);width:clamp(180px,30vw,460px);opacity:.22;z-index:-1;pointer-events:none;animation:markIn 2.4s var(--ease) both}
+@keyframes markIn{from{opacity:0;transform:translateY(-52%) scale(.94)}to{opacity:.22;transform:translateY(-58%) scale(1)}}
+.hero-body{padding-bottom:clamp(30px,4vw,56px)}
+.hero .eyebrow{color:var(--gold-2)}
+.hero h1{margin-top:28px;max-width:11ch}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .w span{display:inline-block;transform:translateY(110%);animation:up 1.3s var(--ease) forwards}
+.hero-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px 60px;margin-top:38px}
+.hero-row p{max-width:44ch;color:rgba(246,239,229,.82);font-size:17px}
+.hero-row .btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn.ghost{border-color:rgba(246,239,229,.5);color:#F6EFE5}
+.hero .btn.ghost::before{background:#F6EFE5}
+.hero .btn.ghost:hover{color:var(--black)}
+.hero-bar{margin-top:clamp(36px,5vw,64px);border-top:1px solid rgba(246,239,229,.22);display:grid;grid-template-columns:repeat(4,1fr) auto;align-items:center;gap:20px}
+.hb{padding-block:22px;display:flex;flex-direction:column;gap:2px}
+.hb b{font-family:var(--display);font-weight:300;font-size:clamp(34px,3.6vw,54px);line-height:1;font-variant-numeric:tabular-nums}
+.hb b em{font-style:normal;color:var(--gold)}
+.hb > span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,239,229,.65)}
+.dots{display:flex;gap:8px;justify-self:end}
+.dots button{width:36px;height:2px;background:rgba(246,239,229,.3);border:0;padding:0;cursor:pointer;position:relative;overflow:hidden}
+.dots button::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.dots button.on::after{animation:fillbar 9s linear forwards}
+@keyframes fillbar{to{transform:scaleX(1)}}
+@media (max-width:900px){.hero-bar{grid-template-columns:1fr 1fr}.dots{grid-column:1/-1;justify-self:start;padding-bottom:6px}}
+@keyframes up{to{transform:none}}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--gold);color:var(--black);overflow:hidden;padding-block:16px}
+.ticker-track{display:flex;width:max-content;animation:tk 50s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font-family:var(--display);font-style:italic;font-size:clamp(20px,2vw,28px);white-space:nowrap;padding-inline:26px;display:flex;align-items:center;gap:52px}
+.ticker-track span::after{content:"";width:6px;height:6px;background:var(--black);border-radius:50%;opacity:.6}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* ---------- statement ---------- */
+.statement h2{font-size:clamp(34px,4.4vw,68px);line-height:1.12;max-width:22ch}
+.statement .cols{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,6vw,110px);margin-top:clamp(48px,6vw,84px);align-items:start}
+.statement .cols p+p{margin-top:20px}
+.adv{list-style:none;padding:0;margin:0;display:grid;counter-reset:a}
+.adv li{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:22px 0;border-top:1px solid var(--line-light)}
+.adv li:last-child{border-bottom:1px solid var(--line-light)}
+.adv li::before{counter-increment:a;content:counter(a,decimal-leading-zero);font-size:11px;letter-spacing:.3em;color:var(--gold-dim);padding-top:8px}
+.adv h3{font-size:26px;margin-bottom:6px}
+.adv p{font-size:14.5px;color:var(--ink-muted)}
+.collage{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(60px,7vw,110px);gap:14px;margin-top:clamp(64px,8vw,110px)}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage .c1{grid-column:1/6;grid-row:1/6}
+.collage .c2{grid-column:6/10;grid-row:2/5}
+.collage .c3{grid-column:10/13;grid-row:1/4}
+.collage .c4{grid-column:10/13;grid-row:4/7}
+.collage figure{margin:0;position:relative;overflow:hidden}
+.collage figcaption{position:absolute;left:14px;bottom:12px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#F6EFE5;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+@media (max-width:900px){.statement .cols{grid-template-columns:1fr}.collage{grid-auto-rows:clamp(52px,9vw,90px)}.collage .c1{grid-column:1/8;grid-row:1/5}.collage .c2{grid-column:8/13;grid-row:1/4}.collage .c3{grid-column:8/13;grid-row:4/6}.collage .c4{grid-column:1/8;grid-row:5/7}}
+
+/* ---------- services rail ---------- */
+.rail-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:26px}
+.rail-head h2{margin-top:22px}
+.rail-nav{display:flex;gap:10px}
+.rail-nav button{width:54px;height:54px;border:1px solid var(--line-dark);background:transparent;color:var(--on-dark);cursor:pointer;font-size:18px;transition:background .3s,color .3s,border-color .3s}
+.rail-nav button:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.rail{margin-top:clamp(40px,5vw,72px);display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:22px;scrollbar-width:none;cursor:grab;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter)}
+.rail::-webkit-scrollbar{display:none}
+.rail.drag{cursor:grabbing;scroll-snap-type:none}
+.card{flex:0 0 clamp(270px,26vw,360px);scroll-snap-align:start;position:relative;aspect-ratio:3/4.2;overflow:hidden;background:var(--espresso-2);display:flex;flex-direction:column;justify-content:flex-end;padding:26px;isolation:isolate;text-decoration:none;color:#F6EFE5}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.4s var(--ease),filter .8s;filter:brightness(.72)}
+.card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,14,11,0) 40%,rgba(18,14,11,.9))}
+.card:hover img{transform:scale(1.06);filter:brightness(.85)}
+.card .n{position:absolute;top:22px;left:26px;font-size:11px;letter-spacing:.3em;color:var(--gold-2)}
+.card h3{font-size:30px;line-height:1.05}
+.card p{font-size:14px;color:rgba(246,239,229,.78);margin-top:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height .7s var(--ease),opacity .5s}
+.card:hover p,.card:focus-visible p{max-height:120px;opacity:1}
+.card .line{width:34px;height:1px;background:var(--gold);margin-bottom:16px;transition:width .6s var(--ease)}
+.card:hover .line{width:64px}
+.progress{height:1px;background:var(--line-dark);margin-top:10px;position:relative}
+.progress i{position:absolute;left:0;top:0;height:100%;background:var(--gold);width:var(--w,10%);transition:width .2s}
+@media (hover:none){.card p{max-height:120px;opacity:1}}
+.scopes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);margin-top:clamp(56px,7vw,96px)}
+.scope{background:var(--black);padding:38px 32px;display:flex;flex-direction:column;gap:12px;transition:background .5s}
+.scope:hover{background:var(--espresso)}
+.scope .big{font-family:var(--display);font-size:64px;line-height:1;color:var(--gold)}
+.scope h3{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500}
+.scope p{font-size:14.5px;color:var(--on-dark-muted)}
+@media (max-width:860px){.scopes{grid-template-columns:1fr}}
+
+/* ---------- sectors (stacked sticky) ---------- */
+.stack{position:relative}
+.stack-intro{padding-block:clamp(90px,12vw,160px) clamp(30px,4vw,60px)}
+.stack-intro h2{margin-top:22px}
+.sector{position:sticky;top:0;height:100svh;min-height:600px;overflow:hidden;color:#F6EFE5;display:flex;align-items:flex-end;isolation:isolate}
+.sector img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.sector::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(18,14,11,.85) 0%,rgba(18,14,11,.35) 55%,rgba(18,14,11,.2) 100%)}
+.sector .wrap{width:100%;padding-bottom:clamp(40px,7vw,100px);display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.sector .idx{font-family:var(--display);font-size:clamp(90px,14vw,200px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(226,196,122,.7);margin-bottom:18px}
+.sector h3{font-size:clamp(44px,6vw,90px)}
+.sector p{max-width:44ch;font-size:16px;color:rgba(246,239,229,.85);margin-top:18px}
+.sector ul{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.sector li{font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(246,239,229,.4);padding:7px 14px}
+.sector .side{justify-self:end;text-align:right;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2)}
+@media (max-width:800px){.sector .wrap{grid-template-columns:1fr}.sector .side{display:none}.sector{min-height:560px}}
+
+/* ---------- sourcing ---------- */
+.sourcing .n800{font-family:var(--display);font-size:clamp(130px,22vw,320px);line-height:.82;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}
+.sourcing .n800 em{font-style:italic;color:var(--gold-dim);font-size:.6em}
+.sourcing h2{font-size:clamp(30px,3.4vw,50px);line-height:1.1;margin-top:26px}
+.partners{display:grid;gap:0;margin-top:14px}
+.partners div{padding:24px 0;border-top:1px solid var(--line-light);display:grid;grid-template-columns:1fr;gap:6px}
+.partners div:last-child{border-bottom:1px solid var(--line-light)}
+.partners b{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1}
+.partners span{font-size:14.5px;color:var(--ink-muted)}
+.chain{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chain span{font-size:12px;letter-spacing:.08em;padding:9px 16px;border:1px solid var(--line-light);background:var(--ivory-2)}
+.src-strip{margin-top:clamp(56px,8vw,110px);display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:12px}
+.src-strip img{width:100%;height:clamp(180px,20vw,300px);object-fit:cover}
+@media (max-width:860px){.src-strip{grid-template-columns:1fr 1fr}.src-strip img:first-child{grid-column:1/-1}}
+
+/* ---------- process ---------- */
+.proc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,120px);align-items:start;margin-top:clamp(48px,6vw,90px)}
+.proc-media{position:sticky;top:90px;aspect-ratio:4/5;overflow:hidden;background:var(--espresso-2)}
+.proc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .9s,transform 1.8s var(--ease)}
+.proc-media img.on{opacity:1;transform:none}
+.proc-media .lab{position:absolute;left:24px;bottom:22px;right:24px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-2)}
+.proc-list{list-style:none;margin:0;padding:0}
+.proc-list li{padding:clamp(36px,5vw,64px) 0;border-top:1px solid var(--line-dark);display:grid;grid-template-columns:70px 1fr;gap:16px;transition:opacity .5s}
+.proc-list li:not(.on){opacity:.38}
+.proc-list .num{font-family:var(--display);font-size:40px;line-height:1;color:var(--gold)}
+.proc-list h3{font-size:clamp(30px,3vw,44px);margin-bottom:12px}
+.proc-list p{font-size:15px;color:var(--on-dark-muted);max-width:44ch}
+.proc-list li:last-child{border-bottom:1px solid var(--line-dark)}
+@media (max-width:900px){.proc{grid-template-columns:1fr}.proc-media{position:relative;top:0;aspect-ratio:16/10}.proc-list li:not(.on){opacity:1}}
+.qa{margin-top:clamp(70px,9vw,130px);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+.qa div{background:var(--black);padding:34px 30px}
+.qa b{font-family:var(--display);font-weight:300;font-size:32px;display:block;margin-bottom:10px}
+.qa p{font-size:14.5px;color:var(--on-dark-muted)}
+.qa .k{font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:16px}
+.note{font-size:12.5px;color:var(--on-dark-muted);font-style:italic;margin-top:18px}
+@media (max-width:860px){.qa{grid-template-columns:1fr}}
+
+/* ---------- portfolio ---------- */
+.pf-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:26px}
+.pf-head h2{margin-top:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:11px 18px;border:1px solid var(--line-light);background:transparent;color:var(--ink);cursor:pointer;transition:all .3s}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.pf-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(140px,14vw,200px);gap:14px;margin-top:clamp(40px,5vw,64px)}
+.pf{position:relative;overflow:hidden;cursor:zoom-in;background:var(--espresso);color:#F6EFE5;border:0;padding:0;text-align:left;font:inherit;transition:opacity .5s,transform .5s var(--ease)}
+.pf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter .6s}
+.pf:hover img{transform:scale(1.06)}
+.pf::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(18,14,11,.85))}
+.pf .cap{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:22px 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
+.pf .cap b{font-family:var(--display);font-weight:300;font-size:clamp(24px,2.2vw,32px);line-height:1.05;display:block}
+.pf .cap .k{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);display:block;margin-bottom:6px}
+.pf .cap .plus{width:38px;height:38px;border:1px solid rgba(246,239,229,.4);display:grid;place-items:center;flex:none;font-size:18px;font-weight:300;transition:background .3s,color .3s}
+.pf:hover .plus{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.pf.dim{opacity:.15;transform:scale(.98);pointer-events:none}
+.pf.s1{grid-column:span 7;grid-row:span 3}
+.pf.s2{grid-column:span 5;grid-row:span 2}
+.pf.s3{grid-column:span 5;grid-row:span 1}
+.pf.s4,.pf.s5,.pf.s6{grid-column:span 4;grid-row:span 2}
+.pf.s7,.pf.s8{grid-column:span 6;grid-row:span 2}
+@media (max-width:860px){.pf-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px}.pf.s1,.pf.s7,.pf.s8{grid-column:1/-1;grid-row:span 2}.pf.s2,.pf.s3,.pf.s4,.pf.s5,.pf.s6{grid-column:span 1;grid-row:span 1}}
+@media (max-width:520px){.pf-grid{grid-template-columns:1fr}.pf.s2,.pf.s3,.pf.s4,.pf.s5,.pf.s6{grid-column:1/-1}}
+.register{margin-top:clamp(80px,10vw,140px);display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(36px,6vw,100px)}
+.register h3{font-size:clamp(32px,3.6vw,52px);margin:20px 0 16px}
+.reg-count{display:flex;gap:40px;margin:30px 0}
+.reg-count b{display:block;font-family:var(--display);font-weight:300;font-size:60px;line-height:1;font-variant-numeric:tabular-nums}
+.reg-count span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted)}
+.reg-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-light)}
+.reg-list li{display:grid;grid-template-columns:40px 1fr auto;gap:4px 16px;padding:18px 0;border-bottom:1px solid var(--line-light);align-items:baseline}
+.reg-list li[hidden]{display:none}
+.reg-list .i{font-size:11px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+.reg-list .nm{font-family:var(--display);font-size:24px;line-height:1.15;font-weight:400}
+.reg-list .sc{grid-column:2;font-size:13.5px;color:var(--ink-muted)}
+.reg-list .lc{grid-row:1/span 2;grid-column:3;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dim);text-align:right;max-width:18ch;align-self:center}
+@media (max-width:900px){.register{grid-template-columns:1fr}}
+@media (max-width:520px){.reg-list li{grid-template-columns:30px 1fr}.reg-list .lc{grid-column:2;grid-row:auto;text-align:left;max-width:none}}
+
+/* ---------- values + team ---------- */
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,100px);margin-top:clamp(44px,6vw,80px)}
+.vm h3{font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--gold);margin-bottom:16px}
+.vm p{font-family:var(--display);font-size:clamp(26px,2.6vw,38px);line-height:1.25}
+.vals{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:clamp(56px,7vw,96px);border-top:1px solid var(--line-dark)}
+.val{padding:30px 22px 30px 0;border-bottom:1px solid var(--line-dark)}
+.val+.val{padding-left:22px;border-left:1px solid var(--line-dark)}
+.val b{font-family:var(--display);font-weight:300;font-size:26px;display:block;margin-bottom:8px}
+.val span{font-size:13.5px;color:var(--on-dark-muted);line-height:1.5;display:block}
+@media (max-width:1100px){.vals{grid-template-columns:repeat(3,1fr)}.val:nth-child(4){padding-left:0;border-left:0}}
+@media (max-width:860px){.vm{grid-template-columns:1fr}.vals{grid-template-columns:1fr 1fr}.val,.val+.val{padding-left:0;border-left:0}.val:nth-child(2n){padding-left:22px;border-left:1px solid var(--line-dark)}}
+.team{margin-top:clamp(90px,12vw,160px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,100px);align-items:center}
+.team h2{margin-top:22px}
+.funcs{list-style:none;padding:0;margin:34px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.funcs li{padding:15px 0;border-top:1px solid var(--line-dark);font-size:15px;display:flex;gap:12px;align-items:baseline}
+.funcs li::before{content:"";width:5px;height:5px;background:var(--gold);transform:rotate(45deg);flex:none;translate:0 -2px}
+.team-media{position:relative;padding-bottom:80px}
+.team-media .a{width:78%;margin-left:auto;aspect-ratio:4/5;object-fit:cover}
+.team-media .b{position:absolute;left:0;bottom:0;width:46%;aspect-ratio:1;object-fit:cover;border:8px solid var(--black)}
+@media (max-width:900px){.team{grid-template-columns:1fr}.team-media{max-width:560px}}
+@media (max-width:520px){.funcs{grid-template-columns:1fr}}
+
+/* ---------- credentials ---------- */
+.creds{border-top:1px solid var(--line-light)}
+.creds .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;align-items:center;justify-content:space-between;padding-block:36px}
+.creds .lbl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-muted)}
+.creds dl{display:flex;flex-wrap:wrap;gap:22px 60px;margin:0}
+.creds dt{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-muted)}
+.creds dd{margin:4px 0 0;font-family:var(--display);font-size:30px;font-variant-numeric:tabular-nums}
+
+/* ---------- contact ---------- */
+.contact{position:relative;overflow:hidden;isolation:isolate}
+.contact .bg{position:absolute;inset:0;z-index:-2}
+.contact .bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.contact::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(18,14,11,.97) 0%,rgba(18,14,11,.9) 50%,rgba(18,14,11,.75))}
+.contact h2{margin-top:24px}
+.details{margin-top:44px;border-top:1px solid var(--line-dark)}
+.row{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line-dark)}
+.row .k{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--on-dark-muted)}
+.row .v{font-size:16.5px;user-select:all;-webkit-user-select:all}
+.copy{font:inherit;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;background:none;border:1px solid var(--line-dark);color:var(--on-dark);padding:8px 13px;cursor:pointer;text-decoration:none;transition:all .3s}
+.copy:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+@media (max-width:520px){.row{grid-template-columns:1fr auto}.row .k{grid-column:1/-1}}
+form.enquiry{background:rgba(241,233,221,.04);border:1px solid var(--line-dark);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:clamp(26px,3.6vw,48px);display:grid;gap:20px}
+form.enquiry h3{font-size:34px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{display:grid;gap:6px}
+.field label{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--on-dark-muted)}
+.field input,.field select,.field textarea{font:inherit;font-size:16px;color:var(--on-dark);background:transparent;border:0;border-bottom:1px solid rgba(241,233,221,.3);padding:10px 0;border-radius:0;transition:border-color .3s;width:100%}
+.field select option{color:var(--ink)}
+.field textarea{resize:vertical;min-height:96px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.field ::placeholder{color:rgba(241,233,221,.35)}
+form .btn{justify-self:start}
+.form-msg{font-size:14px;color:var(--gold-2);min-height:1.4em}
+.form-msg[data-state="err"]{color:#F0A58E}
+@media (max-width:520px){.f2{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{background:var(--black);color:var(--on-dark-muted);padding-block:clamp(56px,8vw,100px) 36px;font-size:14px;border-top:1px solid var(--line-dark)}
+.ft-top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:40px;align-items:start}
+.ft-top img{height:clamp(120px,14vw,190px);width:auto}
+.ft-top h4{font-family:var(--sans);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:0 0 16px}
+.ft-top ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.ft-top a{text-decoration:none;transition:color .3s}
+.ft-top a:hover{color:var(--on-dark)}
+.legal{margin-top:56px;padding-top:24px;border-top:1px solid var(--line-dark);display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between;font-size:12px;letter-spacing:.04em}
+@media (max-width:860px){.ft-top{grid-template-columns:1fr 1fr}.ft-top>div:first-child{grid-column:1/-1}}
+
+/* ---------- lightbox ---------- */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1240px,94vw);width:100%;color:#F6EFE5}
+dialog.lb::backdrop{background:rgba(12,8,6,.94);backdrop-filter:blur(8px)}
+dialog.lb figure{margin:0}
+dialog.lb img{width:100%;max-height:76vh;object-fit:contain;background:#000}
+dialog.lb figcaption{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:18px 2px 0;align-items:baseline}
+dialog.lb figcaption b{font-family:var(--display);font-weight:300;font-size:34px}
+dialog.lb figcaption span{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2)}
+.lb-ctrl{position:fixed;inset:auto 0 24px 0;display:flex;justify-content:center;gap:10px}
+.lb-ctrl button{font:inherit;font-size:11px;letter-spacing:.24em;text-transform:uppercase;background:rgba(246,239,229,.06);border:1px solid rgba(246,239,229,.3);color:#F6EFE5;padding:12px 20px;cursor:pointer}
+.lb-ctrl button:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+
+/* ---------- reveal ---------- */
+.rv{transition:transform 1.2s var(--ease),opacity 1.2s}
+.js .rv:not(.in){transform:translateY(34px);opacity:.001}
+.js .rv.in{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .rv:not(.in){transform:none;opacity:1}
+  .hero h1 .w span{transform:none}
+}
+/* ---------- language switch ---------- */
+.lang{font-size:12px;letter-spacing:.12em;text-decoration:none;color:var(--on-dark);border:1px solid var(--line-dark);padding:9px 13px;line-height:1;transition:all .3s}
+.lang:hover{border-color:var(--gold);color:var(--gold)}
+@media (max-width:600px){.nav-right{gap:8px}.lang{padding:8px 10px}}
+/* ---------- Russian sizing ---------- */
+.h-hero{font-size:clamp(42px,6.6vw,104px)}
+.hero h1{max-width:14ch}
+.h-xl{font-size:clamp(38px,5.6vw,90px)}
+@media (max-width:700px){.hero{height:auto;max-height:none;padding-top:calc(110px + env(safe-area-inset-top,0px))}}
+</style>
+</head>
+<body>
+
+
+<div class="loader" id="loader" aria-hidden="true"><img src="../img/emir-logo-light.svg" alt=""></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="EMIR Projects — главная">
+      <img src="../img/emir-logo-light.svg" alt="EMIR Projects | امير" width="586" height="212">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">О компании</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#sectors">Сектора</a></li>
+      <li><a href="#process">Процесс</a></li>
+      <li><a href="#portfolio">Проекты</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="lang" href="../" hreflang="en" lang="en">EN</a>
+      <a class="lang" href="../ar/" hreflang="ar" lang="ar" style="font-family:'IBM Plex Sans Arabic','Geeza Pro',Tahoma,sans-serif;letter-spacing:0;font-size:14px">عربي</a>
+      <a class="btn" href="#contact">Начать проект</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-left">
+    <ul class="menu-links">
+      <li><a href="#about">О компании</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#sectors">Сектора</a></li>
+      <li><a href="#process">Процесс</a></li>
+      <li><a href="#portfolio">Проекты</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <div class="menu-meta">
+      <div><b>Проектный офис</b>Офис 2202–09, Metropolis Tower<br>Бизнес-Бэй, Дубай, ОАЭ</div>
+      <div><b>Контакты</b>+971 4 250 6845<br>info@emirprojects.com</div>
+    </div>
+  </div>
+  <div class="menu-right"><img src="../img/lobby.jpg" alt=""><img class="mono" src="../img/emir-mark-ar.svg" alt=""></div>
+</div>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-label="Введение">
+  <div class="slides" id="slides">
+    <img class="on" src="../img/hero.jpg" alt="Арочный холл отеля с подвесными светильниками и лаунж-зоной" fetchpriority="high">
+    <img src="../img/pj-lulu.jpg" alt="Кабинет руководителя с позолоченным потолком" loading="lazy">
+    <img src="../img/pj-tulah.jpg" alt="Терраса с бассейном велнес-курорта в сумерках" loading="lazy">
+  </div>
+  <img class="hero-mark" src="../img/emir-mark-ar.svg" alt="" aria-hidden="true">
+  <div class="wrap hero-body">
+    <p class="eyebrow">Дубай · Закупки и комплектация проектов</p>
+    <h1 class="h-hero"><span class="w"><span>Интерьеры,</span></span> <span class="w"><span>подобранные</span></span> <span class="w"><span style="animation-delay:.1s">с</span></span> <span class="w"><span style="animation-delay:.16s"><i>точностью.</i></span></span></h1>
+    <div class="hero-row">
+      <p>Единый ответственный партнёр по интерьерам гостиничных, жилых и коммерческих объектов. Мы связываем страны Персидского залива с лучшими европейскими производителями — от первой спецификации до финальной сдачи.</p>
+      <div class="btns">
+        <a class="btn fill" href="#portfolio">Наши проекты <span class="arr">→</span></a>
+        <a class="btn ghost" href="#about">Наш подход</a>
+      </div>
+    </div>
+    <div class="hero-bar">
+      <div class="hb"><b><span data-count="15">15</span><em>+</em></b><span>Лет опыта</span></div>
+      <div class="hb"><b><span data-count="800">800</span><em>+</em></b><span>Европейских производителей</span></div>
+      <div class="hb"><b><span data-count="100">100</span><em>+</em></b><span>Завершённых проектов</span></div>
+      <div class="hb"><b><span data-count="8">8</span></b><span>Стран присутствия</span></div>
+      <div class="dots" id="dots" role="tablist" aria-label="Изображения"><button class="on" aria-label="Изображение 1"></button><button aria-label="Изображение 2"></button><button aria-label="Изображение 3"></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-label="Избранные клиенты и проекты">
+  <div class="ticker-track" id="ticker">
+    <span>Rixos Marina</span><span>InterContinental</span><span>TULAH Wellness Resort</span><span>Warner Bros Abu Dhabi</span><span>Виллы на Пальме Джумейра</span><span>Oasis Mall</span><span>PAUS. Club</span><span>Emerald Group of Hotels</span><span>Marina Mall</span><span>Al Araimi Boulevard</span><span>SHA International Hotel</span><span>Novel International Schools</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec light statement" id="about">
+  <div class="wrap">
+    <p class="eyebrow rv">Всё — вокруг проекта</p>
+    <h2 class="rv" style="margin-top:24px">EMIR Projects объединяет продукцию, поставщиков, коммерческую выгоду и реализацию в руках <i>одной ответственной команды.</i></h2>
+    <div class="cols">
+      <div class="rv">
+        <p class="lede">Из нашего проектного офиса в Дубае мы связываем клиентов по всему региону Персидского залива с тщательно отобранной сетью из более чем 800 европейских производителей.</p>
+        <p class="muted" style="margin-top:20px;max-width:56ch">Пятнадцать лет опыта в закупках и коммерческой дисциплине — в формате единого партнёрства по поставкам. Одна команда отвечает за сохранение дизайнерского замысла, сроков, качества и бюджета: от спецификации и сметы до производства, логистики и монтажа.</p>
+        <a class="btn" href="#process" style="margin-top:34px">Как мы работаем <span class="arr">→</span></a>
+      </div>
+      <ol class="adv rv">
+        <li><div><h3>Понимание дизайна</h3><p>Профессиональная координация мебели, отделки, освещения и FF&amp;E по спецификациям.</p></div></li>
+        <li><div><h3>Коммерческая дисциплина</h3><p>Прозрачное ценообразование, оптимизация стоимости и контроль бюджета.</p></div></li>
+        <li><div><h3>Прямой доступ к Европе</h3><p>Прямые связи с более чем 800 проверенными европейскими производителями.</p></div></li>
+        <li><div><h3>Одна ответственная команда</h3><p>Один партнёр — от спецификации до поставки и закрытия проекта.</p></div></li>
+      </ol>
+    </div>
+    <div class="collage">
+      <figure class="c1 rv"><img src="../img/living.jpg" alt="Гостиная с изогнутым диваном и люстрой" loading="lazy"><figcaption>Жилые объекты</figcaption></figure>
+      <figure class="c2 rv"><img src="../img/lobby.jpg" alt="Холл отеля двойной высоты с деревянными панелями" loading="lazy"><figcaption>Гостиничный сектор</figcaption></figure>
+      <figure class="c3 rv"><img src="../img/finishes.jpg" alt="Образцы отделки из бронзы, камня и мрамора" loading="lazy"><figcaption>Отделка</figcaption></figure>
+      <figure class="c4 rv"><img src="../img/office.jpg" alt="Кабинет руководителя со столом из ореха" loading="lazy"><figcaption>Коммерческие объекты</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="rail-head rv">
+      <div>
+        <p class="eyebrow">Что мы поставляем</p>
+        <h2 class="h-xl">Полная платформа <i>интерьерных поставок</i></h2>
+      </div>
+      <div class="rail-nav"><button id="railPrev" aria-label="Назад">←</button><button id="railNext" aria-label="Вперёд">→</button></div>
+    </div>
+    <div class="rail" id="rail">
+      <a class="card" href="#contact"><img src="../img/svc-procurement.jpg" alt="" loading="lazy"><span class="n">01</span><span class="line"></span><h3>Закупки для проектов</h3><p>Анализ бюджета и ведомостей объёмов, оценка поставщиков, сравнение предложений, переговоры и управление заказами.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-ffe.jpg" alt="" loading="lazy"><span class="n">02</span><span class="line"></span><h3>FF&amp;E и OS&amp;E</h3><p>Мебель, оснащение и оборудование, а также операционные принадлежности: планирование заказов к открытию, закупка и дозаказы.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-bespoke.jpg" alt="" loading="lazy"><span class="n">03</span><span class="line"></span><h3>Мебель на заказ</h3><p>Столярные изделия, мягкая и корпусная мебель, встроенные решения — точно по утверждённому дизайну.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-lighting.jpg" alt="" loading="lazy"><span class="n">04</span><span class="line"></span><h3>Освещение и поверхности</h3><p>Декоративное и архитектурное освещение, камень, плитка, потолочные системы, настенные покрытия и панели.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-kitchens.jpg" alt="" loading="lazy"><span class="n">05</span><span class="line"></span><h3>Кухни, гардеробные и тумбы</h3><p>Европейские кухни, встроенные шкафы и тумбы под раковину, согласованные с ведомостью отделки.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-flooring.jpg" alt="" loading="lazy"><span class="n">06</span><span class="line"></span><h3>Полы, ковры и покрытия</h3><p>Инженерная доска, каменные полы, ковролин и ковры — от образцов до доставки на объект.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-bath.jpg" alt="" loading="lazy"><span class="n">07</span><span class="line"></span><h3>Сантехника и ванные комнаты</h3><p>Сантехника, смесители и комплексные решения для ванных комнат в номерах, виллах и общественных зонах.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-decor.jpg" alt="" loading="lazy"><span class="n">08</span><span class="line"></span><h3>Текстиль, искусство и декор</h3><p>Текстиль, бельё, произведения искусства и аксессуары, завершающие характер каждого пространства.</p></a>
+      <a class="card" href="#contact"><img src="../img/svc-logistics.jpg" alt="" loading="lazy"><span class="n">09</span><span class="line"></span><h3>Логистика и монтаж</h3><p>Предотгрузочная инспекция, упаковка, фрахт, таможня, поэтапная доставка на объект и координация монтажа.</p></a>
+    </div>
+    <div class="progress" aria-hidden="true"><i id="railProg"></i></div>
+    <div class="scopes">
+      <div class="scope rv"><span class="big">FF&amp;E</span><h3>Мебель, оснащение и оборудование</h3><p>Закупки по лучшей цене, координация участников, снабжение и своевременная поддержка монтажа.</p></div>
+      <div class="scope rv"><span class="big">OS&amp;E</span><h3>Операционное оснащение</h3><p>Планирование заказов к открытию, бюджет, закупки, размещение заказов и последующие дозаказы.</p></div>
+      <div class="scope rv"><span class="big">L&amp;Q</span><h3>Логистика и контроль качества</h3><p>Инспекция, упаковка, фрахт, таможня, доставка по графику и координация монтажа.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="stack" id="sectors">
+  <div class="wrap stack-intro">
+    <p class="eyebrow rv">Где мы работаем</p>
+    <h2 class="h-xl rv">Три сектора. <i>Один стандарт.</i></h2>
+  </div>
+  <article class="sector">
+    <img src="../img/sec-hospitality.jpg" alt="Интерьер ресторана и бара с тёплым освещением" loading="lazy">
+    <div class="wrap">
+      <div><div class="idx">01</div><h3>Гостиничный сектор и лайфстайл</h3><p>Номера, люксы, лобби, рестораны, лаунжи, спа и велнес — отдельными пакетами или под ключ.</p><ul><li>Отели и курорты</li><li>Рестораны и кафе</li><li>Велнес</li><li>OS&amp;E</li></ul></div>
+      <div class="side">Rixos Marina · InterContinental · TULAH</div>
+    </div>
+  </article>
+  <article class="sector">
+    <img src="../img/sec-residential.jpg" alt="Парадный холл резиденции с двойной лестницей и люстрой" loading="lazy">
+    <div class="wrap">
+      <div><div class="idx">02</div><h3>Жилые объекты</h3><p>Виллы, пентхаусы, апартаменты, частные резиденции и шоурумы — с акцентом на комфорт, мастерство и тихую роскошь.</p><ul><li>Частные виллы</li><li>Гостевые люксы</li><li>Мебель на заказ</li><li>Пакеты отделки</li></ul></div>
+      <div class="side">Palm Jumeirah · Marina City · Джидда</div>
+    </div>
+  </article>
+  <article class="sector">
+    <img src="../img/sec-commercial.jpg" alt="Переговорная с видом на город" loading="lazy">
+    <div class="wrap">
+      <div><div class="idx">03</div><h3>Коммерция и ритейл</h3><p>Офисы, рабочие пространства, магазины, шоурумы и многофункциональные объекты с полностью скоординированными интерьерами.</p><ul><li>Офисы руководителей</li><li>ТЦ и ритейл</li><li>Образование</li><li>Отделка под ключ</li></ul></div>
+      <div class="side">Oasis Mall · Marina Mall · Warner Bros</div>
+    </div>
+  </article>
+</section>
+
+<!-- SOURCING -->
+<section class="sec light sourcing" aria-labelledby="srcTitle">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">Европейские поставки, тщательно отобранные</p>
+      <div class="n800" aria-hidden="true"><span data-count="800">800</span><em>+</em></div>
+      <h2 id="srcTitle">Мировой выбор. <i>Один ответственный местный партнёр.</i></h2>
+      <p class="lede muted" style="margin-top:22px">Поиск производителей, техническое соответствие, выгодные альтернативы, образцы, коммерческие переговоры, контроль производства и консолидированные поставки. Каждый этап европейской цепочки поставок — под управлением одной команды.</p>
+    </div>
+    <div class="rv">
+      <div class="partners">
+        <div><b>Stilwerk GmbH</b><span>Экспертиза в дизайне интерьера, мебели, освещении, декоре и лайфстайле.</span></div>
+        <div><b>MHK Group AG</b><span>Закупочное объединение из 4 233 коммерческих партнёров с оборотом 9,66 млрд евро — дополнительная закупочная сила для клиентов.</span></div>
+        <div><b>Поддержка проектов в Дубае</b><span>Местная координация, коммерческий анализ, образцы, планирование поставок и взаимодействие на объекте.</span></div>
+      </div>
+      <div class="chain"><span>Поиск производителей</span><span>Техническое соответствие</span><span>Выгодные альтернативы</span><span>Образцы</span><span>Переговоры</span><span>Контроль производства</span><span>Консолидированные поставки</span></div>
+    </div>
+  </div>
+  <div class="wrap src-strip">
+    <img class="rv" src="../img/materials.jpg" alt="Образцы камня и бронзы на мраморной столешнице" loading="lazy">
+    <img class="rv" src="../img/swatches.jpg" alt="Образцы ткани, мрамора и дерева" loading="lazy">
+    <img class="rv" src="../img/svc-flooring.jpg" alt="Образец паркета ёлочкой" loading="lazy">
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">От брифа до монтажа</p>
+      <h2 class="h-xl">Один процесс. <i>Чёткая ответственность.</i></h2>
+    </div>
+    <div class="proc">
+      <figure class="proc-media" id="procMedia">
+        <img class="on" src="../img/svc-procurement.jpg" alt="" loading="lazy">
+        <img src="../img/swatches.jpg" alt="" loading="lazy">
+        <img src="../img/inspect.jpg" alt="" loading="lazy">
+        <img src="../img/svc-bespoke.jpg" alt="" loading="lazy">
+        <img src="../img/svc-logistics.jpg" alt="" loading="lazy">
+        <img src="../img/lobby.jpg" alt="" loading="lazy">
+        <figcaption class="lab"><span id="procLab">Бриф и спецификация</span><span id="procNum">01 / 06</span></figcaption>
+      </figure>
+      <ol class="proc-list" id="procList">
+        <li class="on"><span class="num">01</span><div><h3>Бриф и спецификация</h3><p>Вводная встреча, анализ дизайна, ведомости объёмов и отделки. Определение проекта, ролей, согласований и ограничений объекта.</p></div></li>
+        <li><span class="num">02</span><div><h3>Подбор и альтернативы</h3><p>Подбор производителей, коммерческие предложения и выгодные альтернативы, сохраняющие утверждённый замысел.</p></div></li>
+        <li><span class="num">03</span><div><h3>Образцы и согласования</h3><p>Скоординированная документация, образцы и ведомости отделки с задокументированными согласованиями.</p></div></li>
+        <li><span class="num">04</span><div><h3>Закупки и производство</h3><p>Размещение заказов, отслеживание производства, контроль этапов и предотгрузочная инспекция.</p></div></li>
+        <li><span class="num">05</span><div><h3>Логистика и доставка</h3><p>Упаковка, маркировка, фрахт, таможня и поэтапная доставка на объект.</p></div></li>
+        <li><span class="num">06</span><div><h3>Монтаж и завершение</h3><p>Координация монтажа, сдача, устранение замечаний и закрытие проекта.</p></div></li>
+      </ol>
+    </div>
+    <div class="qa">
+      <div class="rv"><span class="k">Согласование</span><b>Контроль замысла</b><p>Утверждённые спецификации, образцы и ведомости отделки. Проверка поставщиков и контроль документации.</p></div>
+      <div class="rv"><span class="k">Инспекция</span><b>Контроль до отгрузки</b><p>Мониторинг производства, контроль этапов, проверка отделки и количества перед отгрузкой, проверка упаковки и маркировки.</p></div>
+      <div class="rv"><span class="k">Завершение</span><b>Сопровождение до сдачи</b><p>Учёт поставок, устранение замечаний и корректирующие действия. Каждый продукт проверяется на соответствие спецификации до прибытия на объект.</p></div>
+    </div>
+    <p class="note">Здесь описана операционная модель EMIR Projects; это не является заявлением о сертификации третьей стороной.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="sec light" id="portfolio">
+  <div class="wrap">
+    <div class="pf-head rv">
+      <div>
+        <p class="eyebrow">Избранный опыт</p>
+        <h2 class="h-xl">Портфолио <i>проектов</i></h2>
+      </div>
+      <div class="chips" role="group" aria-label="Фильтр проектов по сектору" id="pfChips">
+        <button class="chip" aria-pressed="true" data-f="all">Все</button>
+        <button class="chip" aria-pressed="false" data-f="hospitality">Гостиничные</button>
+        <button class="chip" aria-pressed="false" data-f="residential">Жилые</button>
+        <button class="chip" aria-pressed="false" data-f="commercial">Коммерческие</button>
+      </div>
+    </div>
+    <div class="pf-grid" id="pfGrid">
+      <button class="pf s1" data-s="hospitality" data-t="TULAH Wellness Resort" data-m="Каликут, Индия · FF&amp;E, отделка и освещение"><img src="../img/pj-tulah.jpg" alt="Терраса с бассейном TULAH Wellness Resort на закате" loading="lazy"><span class="cap"><span><span class="k">Гостиничный · Каликут, Индия</span><b>TULAH Wellness Resort</b></span><span class="plus">+</span></span></button>
+      <button class="pf s2" data-s="commercial" data-t="Кабинет председателя Lulu" data-m="Кабинет руководителя · Мебель и отделка"><img src="../img/pj-lulu.jpg" alt="Кабинет председателя Lulu с позолоченным потолком" loading="lazy"><span class="cap"><span><span class="k">Коммерческий · Офис руководителя</span><b>Кабинет председателя Lulu</b></span><span class="plus">+</span></span></button>
+      <button class="pf s3" data-s="hospitality" data-t="PAUS. Club" data-m="Джумейра, Дубай · Под ключ"><img src="../img/pj-paus.jpg" alt="Обеденный зал в стиле сада в PAUS. Club" loading="lazy"><span class="cap"><span><span class="k">Гостиничный · Джумейра, Дубай</span><b>PAUS. Club</b></span><span class="plus">+</span></span></button>
+      <button class="pf s4" data-s="residential" data-t="Частная вилла, Джидда" data-m="Джидда, Саудовская Аравия · FF&amp;E и отделка"><img src="../img/pj-villa-jeddah.jpg" alt="Входной холл частной виллы в Джидде" loading="lazy"><span class="cap"><span><span class="k">Жилой · Джидда</span><b>Частная вилла</b></span><span class="plus">+</span></span></button>
+      <button class="pf s5" data-s="hospitality" data-t="Rixos Marina" data-m="Абу-Даби · Мебель, отделка и полы"><img src="../img/pj-rixos.jpg" alt="Лобби Rixos Marina с люстрой из синего стекла" loading="lazy"><span class="cap"><span><span class="k">Гостиничный · Абу-Даби</span><b>Rixos Marina</b></span><span class="plus">+</span></span></button>
+      <button class="pf s6" data-s="residential" data-t="TULAH Wellness · Гостевой люкс" data-m="Каликут, Индия · FF&amp;E и отделка"><img src="../img/pj-tulah-room.jpg" alt="Гостевой люкс TULAH Wellness" loading="lazy"><span class="cap"><span><span class="k">Люксы · Каликут, Индия</span><b>Гостевой люкс TULAH</b></span><span class="plus">+</span></span></button>
+      <button class="pf s7" data-s="commercial" data-t="Бизнес-центр Amphitheatre" data-m="Джидда · 65 000 м²"><img src="../img/pj-amphitheatre.jpg" alt="Амфитеатральный зал бизнес-центра Amphitheatre" loading="lazy"><span class="cap"><span><span class="k">Коммерческий · Джидда · 65 000 м²</span><b>Бизнес-центр Amphitheatre</b></span><span class="plus">+</span></span></button>
+      <button class="pf s8" data-s="commercial" data-t="Торговый центр, Джидда" data-m="Джидда · Отделка и полы"><img src="../img/pj-commercial-jeddah.jpg" alt="Фасад торгового центра в Джидде" loading="lazy"><span class="cap"><span><span class="k">Коммерческий · Джидда</span><b>Торговый центр</b></span><span class="plus">+</span></span></button>
+    </div>
+
+    <div class="register">
+      <div class="rv">
+        <p class="eyebrow">Реестр проектов</p>
+        <h3>Завершённые и текущие проекты в странах Залива <i>и Индии.</i></h3>
+        <p class="muted">Отели, виллы, торговые центры, офисы и школы — каждый реализован от спецификации до сдачи.</p>
+        <div class="reg-count">
+          <div><b id="regN">18</b><span>Проектов в списке</span></div>
+          <div><b>5</b><span>Страны</span></div>
+        </div>
+        <div class="chips" role="group" aria-label="Фильтр по региону" id="regChips">
+          <button class="chip" aria-pressed="true" data-r="all">Все</button>
+          <button class="chip" aria-pressed="false" data-r="uae">ОАЭ</button>
+          <button class="chip" aria-pressed="false" data-r="gcc">КСА · Оман · Бахрейн</button>
+          <button class="chip" aria-pressed="false" data-r="india">Индия</button>
+        </div>
+      </div>
+      <ol class="reg-list" id="regList">
+        <li data-r="uae"><span class="i">01</span><span class="nm">Виллы на Пальме Джумейра</span><span class="sc">FF&amp;E, отделка, полы</span><span class="lc">Дубай</span></li>
+        <li data-r="gcc"><span class="i">02</span><span class="nm">Oasis Mall</span><span class="sc">Мебель</span><span class="lc">Саудовская Аравия, Оман и Бахрейн</span></li>
+        <li data-r="uae"><span class="i">03</span><span class="nm">Виллы Marina City</span><span class="sc">Поставка напольных покрытий</span><span class="lc">Абу-Даби</span></li>
+        <li data-r="india"><span class="i">04</span><span class="nm">Tulah Wellness Resort</span><span class="sc">FF&amp;E, отделка, освещение</span><span class="lc">Каликут, Индия</span></li>
+        <li data-r="india"><span class="i">05</span><span class="nm">InterContinental</span><span class="sc">Поставка FF&amp;E</span><span class="lc">Большая Нойда, Индия</span></li>
+        <li data-r="india"><span class="i">06</span><span class="nm">InterContinental</span><span class="sc">Поставка FF&amp;E</span><span class="lc">Западный Мумбаи, Индия</span></li>
+        <li data-r="uae"><span class="i">07</span><span class="nm">Rixos Marina</span><span class="sc">Мебель, полы</span><span class="lc">Абу-Даби</span></li>
+        <li data-r="uae"><span class="i">08</span><span class="nm">Офисный проект Grandeur</span><span class="sc">Под ключ</span><span class="lc">Дубай</span></li>
+        <li data-r="uae"><span class="i">09</span><span class="nm">PAUS. Club</span><span class="sc">Под ключ</span><span class="lc">Джумейра, Дубай</span></li>
+        <li data-r="india"><span class="i">10</span><span class="nm">JBS International Ltd</span><span class="sc">Мебель и отделка</span><span class="lc">Мумбаи, Индия</span></li>
+        <li data-r="uae"><span class="i">11</span><span class="nm">PAUS Café</span><span class="sc">Мебель и отделка</span><span class="lc">Джумейра, Дубай</span></li>
+        <li data-r="gcc"><span class="i">12</span><span class="nm">Al Araimi Boulevard</span><span class="sc">Мебель</span><span class="lc">Маскат, Оман</span></li>
+        <li data-r="uae"><span class="i">13</span><span class="nm">Warner Bros Abu Dhabi</span><span class="sc">Поставка отделки и раковин</span><span class="lc">Абу-Даби</span></li>
+        <li data-r="india"><span class="i">14</span><span class="nm">SHA International Hotel (AYK Group)</span><span class="sc">Поставка FF&amp;E</span><span class="lc">Керала, Индия</span></li>
+        <li data-r="gcc india"><span class="i">15</span><span class="nm">Novel International Schools</span><span class="sc">Поставка школьной мебели</span><span class="lc">Саудовская Аравия и Индия</span></li>
+        <li data-r="india"><span class="i">16</span><span class="nm">Emerald Group of Hotels</span><span class="sc">Поставка FF&amp;E</span><span class="lc">Дели, Ченнаи и Керала</span></li>
+        <li data-r="india"><span class="i">17</span><span class="nm">Роскошный особняк</span><span class="sc">FF&amp;E, отделка и полы</span><span class="lc">Пуна, Индия</span></li>
+        <li data-r="uae"><span class="i">18</span><span class="nm">Marina Mall</span><span class="sc">Напольные покрытия</span><span class="lc">Абу-Даби</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES + TEAM -->
+<section class="sec" id="team">
+  <div class="wrap">
+    <p class="eyebrow rv">Цели и принципы</p>
+    <h2 class="h-xl rv" style="margin-top:22px">Верность дизайну. <i>Коммерческая дисциплина.</i></h2>
+    <div class="vm">
+      <div class="rv"><h3>Видение</h3><p>Быть надёжным региональным партнёром в поставках продуманно подобранных дизайнерских интерьерных решений и в скоординированной комплектации проектов.</p></div>
+      <div class="rv"><h3>Миссия</h3><p>Обеспечивать надёжную ценность от спецификации до монтажа благодаря прозрачным закупкам, силе европейских поставок и ответственной координации.</p></div>
+    </div>
+    <div class="vals">
+      <div class="val"><b>Честность</b><span>Чёткие обязательства и прозрачные решения.</span></div>
+      <div class="val"><b>Сервис</b><span>Оперативная поддержка от брифа до сдачи.</span></div>
+      <div class="val"><b>Качество</b><span>Контроль на этапах спецификации, производства и поставки.</span></div>
+      <div class="val"><b>Ответственность</b><span>Одна команда, прозрачная ответственность, задокументированные действия.</span></div>
+      <div class="val"><b>Командная работа</b><span>Слаженная координация со всеми участниками.</span></div>
+      <div class="val"><b>Верность дизайну</b><span>Сохранение утверждённого замысла при оптимизации стоимости.</span></div>
+    </div>
+    <div class="team">
+      <div class="rv">
+        <p class="eyebrow">Создано для ответственной реализации</p>
+        <h2 class="h-lg">Единое контактное лицо. <i>За ним — целая команда.</i></h2>
+        <p class="lede muted" style="margin-top:24px">Ваш руководитель проекта EMIR контролирует коммерческие вопросы, дизайн, производство, качество, логистику и поставки на объект при поддержке профильных специалистов.</p>
+        <ul class="funcs">
+          <li>Операции и закупки</li><li>Проекты и координация на объекте</li><li>Дизайн и техническая координация</li><li>Финансы и администрирование</li><li>Качество, ОТ и ТБ, документооборот</li><li>Партнёры по логистике и монтажу</li>
+        </ul>
+      </div>
+      <div class="team-media">
+        <img class="a rv" src="../img/inspect.jpg" alt="Специалист проверяет образцы отделки" loading="lazy">
+        <img class="b rv" src="../img/svc-bespoke.jpg" alt="Мастер за обивкой мебели" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<div class="light creds" aria-label="Регистрационные данные">
+  <div class="wrap">
+    <span class="lbl">Лицензирована и зарегистрирована в Дубае</span>
+    <dl>
+      <div><dt>Коммерческая лицензия</dt><dd>752326</dd></div>
+      <div><dt>Торговый реестр</dt><dd>1213808</dd></div>
+      <div><dt>Торговая палата Дубая</dt><dd>264306</dd></div>
+    </dl>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="sec contact" id="contact">
+  <div class="bg"><img src="../img/corridor.jpg" alt="" loading="lazy"></div>
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">Начать проект</p>
+      <h2 class="h-xl">Создадим нечто <i>исключительное.</i></h2>
+      <div class="details">
+        <div class="row"><span class="k">Офис</span><span class="v">Офис 2202–09, Metropolis Tower, Бизнес-Бэй, Дубай, ОАЭ</span><a class="copy" href="https://www.google.com/maps/search/?api=1&amp;query=Metropolis+Tower+Business+Bay+Dubai" target="_blank" rel="noopener">Карта</a></div>
+        <div class="row"><span class="k">Телефон</span><span class="v">+971 4 250 6845</span><button class="copy" data-copy="+97142506845">Копировать</button></div>
+        <div class="row"><span class="k">E-mail</span><span class="v">info@emirprojects.com</span><button class="copy" data-copy="info@emirprojects.com">Копировать</button></div>
+        <div class="row"><span class="k">Почта</span><span class="v">А/я 232505, Дубай</span><span></span></div>
+      </div>
+    </div>
+    <form class="enquiry rv" id="enq" novalidate>
+      <h3>Запрос <i>по проекту</i></h3>
+      <div class="f2">
+        <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" autocomplete="name" placeholder="Ваше имя" required></div>
+        <div class="field"><label for="f-company">Компания</label><input id="f-company" name="company" autocomplete="organization" placeholder="Компания или бюро"></div>
+      </div>
+      <div class="f2">
+        <div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required></div>
+        <div class="field"><label for="f-sector">Сектор</label><select id="f-sector" name="sector"><option>Гостиничный</option><option>Жилой</option><option>Коммерция и ритейл</option><option>Другое</option></select></div>
+      </div>
+      <div class="field"><label for="f-scope">Объём работ</label><select id="f-scope" name="scope"><option>Полный пакет FF&amp;E / OS&amp;E</option><option>Мебель и изделия на заказ</option><option>Отделка, полы и освещение</option><option>Кухни и ванные комнаты</option><option>Комплектация интерьера под ключ</option><option>Пока не определено</option></select></div>
+      <div class="field"><label for="f-msg">О проекте</label><textarea id="f-msg" name="message" placeholder="Местоположение, сроки, примерные объёмы или статус ведомости объёмов"></textarea></div>
+      <button class="btn fill" type="submit">Подготовить запрос <span class="arr">→</span></button>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-top">
+      <div><img src="../img/emir-logo-light.svg" alt="EMIR Projects | امير" style="width:230px;max-width:70%;height:auto"><p style="margin-top:22px;max-width:36ch">Комплектация проектов · Закупки · Европейские интерьерные решения для гостиничных, жилых и коммерческих объектов.</p></div>
+      <div><h4>Разделы</h4><ul><li><a href="#about">О компании</a></li><li><a href="#services">Услуги</a></li><li><a href="#sectors">Сектора</a></li><li><a href="#process">Процесс</a></li><li><a href="#portfolio">Проекты</a></li></ul></div>
+      <div><h4>Проектный офис</h4><ul><li>Офис 2202–09, Metropolis Tower</li><li>Бизнес-Бэй, Дубай, ОАЭ</li><li>А/я 232505</li></ul></div>
+      <div><h4>Контакты</h4><ul><li>+971 4 250 6845</li><li>info@emirprojects.com</li><li>www.emirprojects.com</li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr">2026</span> EMIR Projects General Trading L.L.C. Все права защищены.</span>
+      <span>Юридический адрес: офис 311, здание Sheikha Mahra Ahmed Al Ghurair, Аль-Кусайс 2, Дубай</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Изображение проекта">
+  <figure><img id="lbImg" alt=""><figcaption><b id="lbT"></b><span id="lbM"></span></figcaption></figure>
+  <div class="lb-ctrl"><button id="lbPrev">← Назад</button><button id="lbClose">Закрыть</button><button id="lbNext">Вперёд →</button></div>
+</dialog>
+
+<script>
+(function(){
+  var root = document.documentElement; root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* loader */
+  var loader = document.getElementById('loader');
+  function hideLoader(){ loader.classList.add('done'); }
+  if (document.readyState === 'complete') setTimeout(hideLoader, 500); else window.addEventListener('load', function(){ setTimeout(hideLoader, 500); });
+  setTimeout(hideLoader, 2600);
+
+  /* nav + menu */
+  var nav = document.getElementById('nav'), burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  function onScroll(){ nav.classList.toggle('solid', window.scrollY > 60); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  function setMenu(o){ document.body.classList.toggle('menu-open', o); burger.setAttribute('aria-expanded', o); menu.setAttribute('aria-hidden', !o); burger.setAttribute('aria-label', o ? 'Закрыть меню' : 'Открыть меню'); }
+  burger.addEventListener('click', function(){ setMenu(!document.body.classList.contains('menu-open')); });
+  menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
+  /* hero slideshow */
+  var slides = document.querySelectorAll('#slides img'), dots = document.querySelectorAll('#dots button'), cur = 0, timer;
+  function go(i){
+    cur = (i + slides.length) % slides.length;
+    slides.forEach(function(s,k){ s.classList.toggle('on', k===cur); });
+    dots.forEach(function(d,k){ d.classList.toggle('on', k===cur); if(k===cur){ d.style.animation='none'; void d.offsetWidth; d.style.animation=''; } });
+    clearTimeout(timer); if (!reduce) timer = setTimeout(function(){ go(cur+1); }, 9000);
+  }
+  dots.forEach(function(d,k){ d.addEventListener('click', function(){ go(k); }); });
+  if (!reduce) timer = setTimeout(function(){ go(1); }, 9000);
+
+  /* ticker loop */
+  var tk = document.getElementById('ticker'); tk.innerHTML += tk.innerHTML;
+  Array.prototype.slice.call(tk.children, tk.children.length/2).forEach(function(s){ s.setAttribute('aria-hidden','true'); });
+
+  /* counters */
+  function countUp(el){
+    if (el.dataset.done || reduce) return; el.dataset.done = 1;
+    var end = +el.dataset.count, t0 = null, dur = 1800;
+    function step(t){ if(!t0) t0=t; var p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,4); el.textContent = Math.round(end*e); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  /* reveal */
+  var io = new IntersectionObserver(function(ents){
+    ents.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in');
+      e.target.querySelectorAll('[data-count]').forEach(countUp); if(e.target.dataset.count) countUp(e.target);
+      io.unobserve(e.target); } });
+  }, {threshold:.1, rootMargin:'0px 0px -5% 0px'});
+  document.querySelectorAll('.rv, [data-count]').forEach(function(el){ io.observe(el); });
+
+  /* services rail */
+  var rail = document.getElementById('rail'), prog = document.getElementById('railProg');
+  function step(){ return rail.querySelector('.card').getBoundingClientRect().width + 18; }
+  document.getElementById('railNext').onclick = function(){ rail.scrollBy({left: step()*2, behavior:'smooth'}); };
+  document.getElementById('railPrev').onclick = function(){ rail.scrollBy({left: -step()*2, behavior:'smooth'}); };
+  function railProg(){ var m = rail.scrollWidth - rail.clientWidth; prog.style.setProperty('--w', (10 + 90*(m? rail.scrollLeft/m : 0)) + '%'); }
+  rail.addEventListener('scroll', railProg, {passive:true}); railProg();
+  var down=false, sx=0, sl=0, moved=false;
+  rail.addEventListener('pointerdown', function(e){ if (e.pointerType!=='mouse') return; down=true; moved=false; sx=e.clientX; sl=rail.scrollLeft; rail.classList.add('drag'); });
+  window.addEventListener('pointermove', function(e){ if(!down) return; var dx=e.clientX-sx; if(Math.abs(dx)>4) moved=true; rail.scrollLeft = sl - dx; });
+  window.addEventListener('pointerup', function(){ if(!down) return; down=false; rail.classList.remove('drag'); });
+  rail.addEventListener('click', function(e){ if (moved){ e.preventDefault(); moved=false; } });
+
+  /* process scroll sync */
+  var pl = document.querySelectorAll('#procList li'), pm = document.querySelectorAll('#procMedia img'), plab = document.getElementById('procLab'), pnum = document.getElementById('procNum');
+  var pio = new IntersectionObserver(function(ents){
+    ents.forEach(function(e){ if(e.isIntersecting){ var i = Array.prototype.indexOf.call(pl, e.target);
+      pl.forEach(function(li,k){ li.classList.toggle('on', k===i); }); pm.forEach(function(im,k){ im.classList.toggle('on', k===i); });
+      plab.textContent = e.target.querySelector('h3').textContent; pnum.textContent = String(i+1).padStart(2,'0') + ' / 06'; } });
+  }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+  pl.forEach(function(li){ pio.observe(li); });
+
+  /* portfolio filter */
+  var pfs = Array.prototype.slice.call(document.querySelectorAll('.pf'));
+  document.querySelectorAll('#pfChips .chip').forEach(function(c){
+    c.addEventListener('click', function(){
+      document.querySelectorAll('#pfChips .chip').forEach(function(x){ x.setAttribute('aria-pressed', x===c); });
+      var f = c.dataset.f; pfs.forEach(function(p){ var dim = f!=='all' && p.dataset.s!==f; p.classList.toggle('dim', dim); p.tabIndex = dim?-1:0; });
+    });
+  });
+  /* register filter */
+  var regs = document.querySelectorAll('#regList li'), regN = document.getElementById('regN');
+  document.querySelectorAll('#regChips .chip').forEach(function(c){
+    c.addEventListener('click', function(){
+      document.querySelectorAll('#regChips .chip').forEach(function(x){ x.setAttribute('aria-pressed', x===c); });
+      var r = c.dataset.r, n = 0; regs.forEach(function(li){ var show = r==='all' || li.dataset.r.split(' ').indexOf(r)>-1; li.hidden = !show; if(show) n++; }); regN.textContent = n;
+    });
+  });
+
+  /* lightbox */
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbT = document.getElementById('lbT'), lbM = document.getElementById('lbM'), li = 0;
+  function vis(){ return pfs.filter(function(p){ return !p.classList.contains('dim'); }); }
+  function show(p){ var im = p.querySelector('img'); lbImg.src = im.src; lbImg.alt = im.alt; lbT.textContent = p.dataset.t; lbM.textContent = p.dataset.m; }
+  pfs.forEach(function(p){ p.addEventListener('click', function(){ li = vis().indexOf(p); show(p); if (lb.showModal) lb.showModal(); }); });
+  function nav2(d){ var v = vis(); li = (li+d+v.length)%v.length; show(v[li]); }
+  document.getElementById('lbPrev').onclick = function(){ nav2(-1); };
+  document.getElementById('lbNext').onclick = function(){ nav2(1); };
+  document.getElementById('lbClose').onclick = function(){ lb.close(); };
+  lb.addEventListener('click', function(e){ if (e.target===lb) lb.close(); });
+  lb.addEventListener('keydown', function(e){ if(e.key==='ArrowRight') nav2(1); if(e.key==='ArrowLeft') nav2(-1); });
+
+  /* copy */
+  document.querySelectorAll('button.copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var done = function(){ b.textContent='Скопировано'; setTimeout(function(){ b.textContent='Копировать'; },1800); };
+      var fb = function(){ var s=window.getSelection(), r=document.createRange(); r.selectNodeContents(b.previousElementSibling); s.removeAllRanges(); s.addRange(r); b.textContent='Выделено'; setTimeout(function(){ b.textContent='Копировать'; },1800); };
+      try { navigator.clipboard.writeText(b.dataset.copy).then(done, fb); } catch(e){ fb(); }
+    });
+  });
+
+  /* enquiry form: prepares an email to the company */
+  var form = document.getElementById('enq'), msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var d = new FormData(form), name=(d.get('name')||'').trim(), email=(d.get('email')||'').trim();
+    if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.dataset.state='err'; msg.textContent='Пожалуйста, укажите имя и корректный e-mail, чтобы мы могли ответить.'; return; }
+    msg.dataset.state='';
+    var body='Имя: '+name+'\nКомпания: '+(d.get('company')||'')+'\nE-mail: '+email+'\nСектор: '+d.get('sector')+'\nОбъём работ: '+d.get('scope')+'\n\n'+(d.get('message')||'');
+    try { window.location.href = 'mailto:info@emirprojects.com?subject='+encodeURIComponent('Запрос по проекту – '+name)+'&body='+encodeURIComponent(body); } catch(err){}
+    msg.textContent='Ваш запрос готов в почтовом приложении. Если оно не открылось, напишите нам напрямую: info@emirprojects.com';
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
