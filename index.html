@@ -6,7 +6,7 @@
 <meta property="og:title" content="EMIR Projects">
 <meta property="og:description" content="Procurement and project supply for hospitality, residential and commercial interiors. Dubai, UAE.">
 <meta property="og:image" content="img/hero.jpg">
-<link rel="icon" href="img/mono-gold.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <title>EMIR Projects</title>
 <meta name="description" content="EMIR Projects is a Dubai-based procurement and project-supply partner for hospitality, residential and commercial interiors, connecting the Gulf to 800+ European manufacturers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,7 +74,7 @@ p{margin:0}
 /* ---------- loader ---------- */
 .loader{position:fixed;inset:0;z-index:100;background:var(--black);display:grid;place-items:center;transition:opacity .9s var(--ease),visibility .9s}
 .loader.done{opacity:0;visibility:hidden;pointer-events:none}
-.loader img{width:clamp(80px,12vw,130px);animation:pulse 1.6s ease-in-out infinite}
+.loader img{width:clamp(200px,26vw,300px);animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.5;transform:scale(.97)}50%{opacity:1;transform:scale(1)}}
 
 /* ---------- nav ---------- */
@@ -83,8 +83,9 @@ p{margin:0}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:92px;transition:height .4s}
 .nav.solid .wrap{height:72px}
 .brand{display:flex;align-items:center;gap:16px;text-decoration:none}
-.brand img{height:46px;width:auto;transition:height .4s}
-.nav.solid .brand img{height:38px}
+.brand img{height:54px;width:auto;transition:height .4s}
+.nav.solid .brand img{height:44px}
+@media (max-width:600px){.brand img{height:44px}.nav.solid .brand img{height:38px}}
 .brand .wm{display:flex;flex-direction:column;line-height:1}
 .brand .wm b{font-family:var(--sans);font-weight:400;font-size:17px;letter-spacing:.42em}
 .brand .wm small{font-size:8px;letter-spacing:.6em;font-weight:500;color:var(--gold);margin-top:6px;margin-left:.1em}
@@ -398,13 +399,12 @@ dialog.lb figcaption span{font-size:11px;letter-spacing:.24em;text-transform:upp
 <body>
 
 
-<div class="loader" id="loader" aria-hidden="true"><img src="img/mono-gold.svg" alt=""></div>
+<div class="loader" id="loader" aria-hidden="true"><img src="img/emir-logo-light.svg" alt=""></div>
 
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="EMIR Projects home">
-      <img src="img/mono-gold.svg" alt="" width="140" height="190">
-      <span class="wm"><b>EMIR</b><small>PROJECTS</small></span>
+      <img src="img/emir-logo-light.svg" alt="EMIR Projects | امير" width="586" height="212">
     </a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
@@ -434,7 +434,7 @@ dialog.lb figcaption span{font-size:11px;letter-spacing:.24em;text-transform:upp
       <div><b>Contact</b>+971 4 250 6845<br>info@emirprojects.com</div>
     </div>
   </div>
-  <div class="menu-right"><img src="img/lobby.jpg" alt=""><img class="mono" src="img/mono-ivory.svg" alt=""></div>
+  <div class="menu-right"><img src="img/lobby.jpg" alt=""><img class="mono" src="img/emir-mark-ar.svg" alt=""></div>
 </div>
 
 <main id="top">
@@ -445,7 +445,7 @@ dialog.lb figcaption span{font-size:11px;letter-spacing:.24em;text-transform:upp
     <img src="img/pj-lulu.jpg" alt="Executive office with gilded ceiling" loading="lazy">
     <img src="img/pj-tulah.jpg" alt="Wellness resort pool terrace at dusk" loading="lazy">
   </div>
-  <img class="hero-mark" src="img/mono-gold.svg" alt="" aria-hidden="true">
+  <img class="hero-mark" src="img/emir-mark-ar.svg" alt="" aria-hidden="true">
   <div class="wrap hero-body">
     <p class="eyebrow">Dubai · Procurement &amp; project supply</p>
     <h1 class="h-hero"><span class="w"><span>Interiors,</span></span> <span class="w"><span>sourced</span></span> <span class="w"><span style="animation-delay:.1s">with</span></span> <span class="w"><span style="animation-delay:.16s"><i>precision.</i></span></span></h1>
@@ -767,7 +767,7 @@ dialog.lb figcaption span{font-size:11px;letter-spacing:.24em;text-transform:upp
 <footer>
   <div class="wrap">
     <div class="ft-top">
-      <div><img src="img/logo-gold.svg" alt="EMIR Projects"><p style="margin-top:22px;max-width:36ch">Project supply · Procurement · European interior solutions for hospitality, residential and commercial interiors.</p></div>
+      <div><img src="img/emir-logo-light.svg" alt="EMIR Projects | امير" style="width:230px;max-width:70%;height:auto"><p style="margin-top:22px;max-width:36ch">Project supply · Procurement · European interior solutions for hospitality, residential and commercial interiors.</p></div>
       <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#sectors">Sectors</a></li><li><a href="#process">Process</a></li><li><a href="#portfolio">Portfolio</a></li></ul></div>
       <div><h4>Project office</h4><ul><li>Suite 2202–09, Metropolis Tower</li><li>Business Bay, Dubai, UAE</li><li>PO Box 232505</li></ul></div>
       <div><h4>Contact</h4><ul><li>+971 4 250 6845</li><li>info@emirprojects.com</li><li>www.emirprojects.com</li></ul></div>
